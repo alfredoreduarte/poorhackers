@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  project: one
+  title: MyString
+  start_date: 2018-08-17 03:59:53
+  end_date: 2018-08-17 03:59:53
+  metric: MyString
+  baseline: 1.5
+  current: 1.5
+  goal: 1.5
+
+two:
+  project: two
+  title: MyString
+  start_date: 2018-08-17 03:59:53
+  end_date: 2018-08-17 03:59:53
+  metric: MyString
+  baseline: 1.5
+  current: 1.5
+  goal: 1.5

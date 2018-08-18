@@ -1,0 +1,57 @@
+<%= form_with(model: objective, local: true) do |form| %>
+  <% if objective.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(objective.errors.count, "error") %> prohibited this objective from being saved:</h2>
+
+      <ul>
+      <% objective.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :project_id %>
+    <%= form.select(:project_id, Project.all.collect {|p| [p.title, p.id]}) %>
+  </div>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title, id: :objective_title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :start_date %>
+    <%= form.datetime_select :start_date, id: :objective_start_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :end_date %>
+    <%= form.datetime_select :end_date, id: :objective_end_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :metric %>
+    <%= form.text_field :metric, id: :objective_metric %>
+  </div>
+
+  <div class="field">
+    <%= form.label :baseline %>
+    <%= form.text_field :baseline, id: :objective_baseline %>
+  </div>
+
+  <div class="field">
+    <%= form.label :current %>
+    <%= form.text_field :current, id: :objective_current %>
+  </div>
+
+  <div class="field">
+    <%= form.label :goal %>
+    <%= form.text_field :goal, id: :objective_goal %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

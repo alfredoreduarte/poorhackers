@@ -1,0 +1,68 @@
+<%= form_with(model: idea, local: true) do |form| %>
+  <% if idea.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(idea.errors.count, "error") %> prohibited this idea from being saved:</h2>
+
+      <ul>
+      <% idea.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :objective_id %>
+    <%= form.select(:objective_id, Objective.all.collect {|p| [p.title, p.id]}) %>
+  </div>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title, id: :idea_title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :details %>
+    <%= form.text_field :details, id: :idea_details %>
+  </div>
+
+  <div class="field">
+    <%= form.label :growth_lever %>
+    <%#= form.number_field :growth_lever, id: :idea_growth_lever %>
+    <%= form.select(:growth_lever, {}, {}, { class: 'form-control' }) do %>
+      <option disabled selected value> -- Choose one -- </option>
+      <% Idea.growth_levers.map{|p_type| [p_type[0], p_type[1]]}.each do |growth_lever| -%>
+        <%= content_tag(
+          :option, 
+          growth_lever.first.upcase, 
+          value: growth_lever.first, 
+          selected: growth_lever.last == @idea.growth_lever_before_type_cast
+        ) %>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div class="field">
+    <%= form.label :rating_impact %>
+    <%= form.text_field :rating_impact, id: :idea_rating_impact %>
+  </div>
+
+  <div class="field">
+    <%= form.label :rating_confidence %>
+    <%= form.text_field :rating_confidence, id: :idea_rating_confidence %>
+  </div>
+
+  <div class="field">
+    <%= form.label :rating_ease %>
+    <%= form.text_field :rating_ease, id: :idea_rating_ease %>
+  </div>
+
+  <div class="field">
+    <%= form.label :hypothesis %>
+    <%= form.text_field :hypothesis, id: :idea_hypothesis %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

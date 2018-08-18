@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= @project.title %></h1>
+
+<p>
+  <strong>Owner:</strong>
+  <%= @project.user.email %>
+</p>
+
+<p>
+  <strong>Organization:</strong>
+  <%= @project.organization.title %>
+</p>
+
+<p>
+  <strong>Weekly tempo:</strong>
+  <%= @project.weekly_tempo %>
+</p>
+
+<h2>Objectives</h2>
+<ul>
+	<% @project.objectives.each do |obj| %>
+		<li><%= link_to obj.title, obj %></li>
+	<% end %>
+</ul>
+
+<h2>Ideas</h2>
+<ul>
+	<% @project.ideas.each do |idea| %>
+		<li><%= link_to idea.title, idea %></li>
+	<% end %>
+</ul>
+
+<%= link_to 'Edit', edit_project_path(@project) %> |
+<%= link_to 'Back', projects_path %>

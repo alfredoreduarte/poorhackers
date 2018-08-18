@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Objective:</strong>
+  <%= @idea.objective.title %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @idea.user.email %>
+</p>
+
+<p>
+  <strong>Details:</strong>
+  <%= @idea.details %>
+</p>
+
+<p>
+  <strong>Growth lever:</strong>
+  <%= @idea.growth_lever %>
+</p>
+
+<p>
+  <strong>Rating impact:</strong>
+  <%= @idea.rating_impact %>
+</p>
+
+<p>
+  <strong>Rating confidence:</strong>
+  <%= @idea.rating_confidence %>
+</p>
+
+<p>
+  <strong>Rating ease:</strong>
+  <%= @idea.rating_ease %>
+</p>
+
+<p>
+  <strong>Hypothesis:</strong>
+  <%= @idea.hypothesis %>
+</p>
+
+<%= link_to 'Edit', edit_idea_path(@idea) %> |
+<%= link_to 'Back', ideas_path %>

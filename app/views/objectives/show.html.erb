@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Project:</strong>
+  <%= @objective.project.title %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @objective.title %>
+</p>
+
+<p>
+  <strong>Start date:</strong>
+  <%= @objective.start_date %>
+</p>
+
+<p>
+  <strong>End date:</strong>
+  <%= @objective.end_date %>
+</p>
+
+<p>
+  <strong>Metric:</strong>
+  <%= @objective.metric %>
+</p>
+
+<p>
+  <strong>Baseline:</strong>
+  <%= @objective.baseline %>
+</p>
+
+<p>
+  <strong>Current:</strong>
+  <%= @objective.current %>
+</p>
+
+<p>
+  <strong>Goal:</strong>
+  <%= @objective.goal %>
+</p>
+
+<%= link_to 'Edit', edit_objective_path(@objective) %> |
+<%= link_to 'Back', objectives_path %>

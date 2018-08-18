@@ -1,1 +1,19 @@
-hey yo
+<h2>Organizations</h2>
+<ul>
+	<% @organizations.each do |org| %>
+	<li><%= link_to org.title, org %></li>
+	<% end %>
+</ul>
+<h2>Projects</h2>
+<ul>
+	<% @projects.each do |proj| %>
+	<li><%= link_to proj.title, proj %></li>
+	<% end %>
+</ul>
+<h2>Ideas</h2>
+<ul>
+	<% @ideas.each do |proj| %>
+	<li><%= link_to proj.title, proj %></li>
+	<% end %>
+</ul>
+<p><%= link_to 'users', 'users' %></p>

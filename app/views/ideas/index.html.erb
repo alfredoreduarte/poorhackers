@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Ideas</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Objective</th>
+      <th>User</th>
+      <th>Details</th>
+      <th>Hypothesis</th>
+      <th>Growth lever</th>
+      <th>Rating impact</th>
+      <th>Rating confidence</th>
+      <th>Rating ease</th>
+      <th>Hypothesis</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ideas.each do |idea| %>
+      <tr>
+        <td><%= idea.objective.title %></td>
+        <td><%= idea.user.email %></td>
+        <td><%= idea.details %></td>
+        <td><%= idea.hypothesis %></td>
+        <td><%= idea.growth_lever %></td>
+        <td><%= idea.rating_impact %></td>
+        <td><%= idea.rating_confidence %></td>
+        <td><%= idea.rating_ease %></td>
+        <td><%= idea.hypothesis %></td>
+        <td><%= link_to 'Show', idea %></td>
+        <td><%= link_to 'Edit', edit_idea_path(idea) %></td>
+        <td><%= link_to 'Destroy', idea, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Idea', new_idea_path %>

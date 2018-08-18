@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  objective: one
+  user: one
+  details: 
+  growth_lever: 1
+  rating_impact: 1.5
+  rating_confidence: 1.5
+  rating_ease: 1.5
+  hypothesis: 
+
+two:
+  objective: two
+  user: two
+  details: 
+  growth_lever: 1
+  rating_impact: 1.5
+  rating_confidence: 1.5
+  rating_ease: 1.5
+  hypothesis: 

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Nominations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Idea</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @nominations.each do |nomination| %>
+      <tr>
+        <td><%= nomination.user %></td>
+        <td><%= nomination.idea %></td>
+        <td><%= link_to 'Show', nomination %></td>
+        <td><%= link_to 'Edit', edit_nomination_path(nomination) %></td>
+        <td><%= link_to 'Destroy', nomination, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Nomination', new_nomination_path %>
