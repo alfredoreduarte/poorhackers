@@ -8,8 +8,10 @@ class ApplicationController < ActionController::Base
   end
 
   def initialize_entities
-  	@organizations = current_user.organizations
-  	@projects = current_user.projects
-  	@ideas = current_user.ideas
+    if !current_user.nil?
+      @organizations = current_user.organizations
+      @projects = current_user.projects
+      @ideas = current_user.ideas
+    end
   end
 end
