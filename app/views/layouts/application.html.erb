@@ -14,7 +14,7 @@
 
   <body class="fixed-nav">
 
-    <%= render 'layouts/nav' %>
+    <%= render 'layouts/nav' if !@organizations.nil? %>
 
     <!--main content wrapper-->
     <div class="content-wrapper">
