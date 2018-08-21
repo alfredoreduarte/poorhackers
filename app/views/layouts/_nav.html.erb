@@ -372,7 +372,7 @@
                     <a class="dropdown-item" href="#">Inbox <span class="badge badge-primary">3</span></a>
                     <a class="dropdown-item" href="#">Message <span class="badge badge-success">5</span></a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="login.html">Sign Out</a>
+                    <%= link_to('Sign Out', destroy_user_session_path, method: :delete, class: 'dropdown-item') %>  
                 </div>
             </li>
             <li class="nav-item">
